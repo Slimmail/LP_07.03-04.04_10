@@ -13,3 +13,4 @@ if (num >= 100 && num <= 999)
   Console.Write($"Последняя цифра числа {numLast}");
 }
 else {Console.Write("Неверное значение!");}
+
