@@ -8,7 +8,7 @@ Console.Clear();
 Console.WriteLine("Введите трехзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 int result = GetTwoDigitPosition(number);
-Console.WriteLine(result);
+Console.WriteLine($"{number} -> {result}");
 
 int GetTwoDigitPosition(int num)
 {
