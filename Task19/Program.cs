@@ -4,13 +4,6 @@
 // 12821 -> да
 // 23432 -> да
 
-Console.Clear();
-Console.Write("Введите пятизначное число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-string getReason = GetReason(number) ? "Да" : "Нет";
-Console.Write($"{number} -> {getReason}");
-
 bool GetReason(int num)
 {
   if (num >= 10000 && num <= 99999)
@@ -23,6 +16,21 @@ bool GetReason(int num)
         {
           return true;
         }
+      
     }
   return false;
 }
+
+Console.Clear();
+Console.Write("Введите пятизначное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+int numberFresh = number;
+if (number < 0 )
+{
+  numberFresh *= -1;
+}
+
+string getReason = GetReason(numberFresh) ? "Да" : "Нет";
+Console.Write($"{number} -> {getReason}");
+
