@@ -65,7 +65,7 @@ PrintArray(array);
 
 double numberMax = FindMax(array);
 double numberMin = FindMin(array);
-double diff = numberMax - numberMin;
+double diff = DigsDifference(numberMax, numberMin);
 double diffFresh = Math.Round(diff, 1); // округлил результат, чтобы исключить хвосты
 
 
