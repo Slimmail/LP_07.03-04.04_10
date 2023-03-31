@@ -51,20 +51,21 @@ void PrintArray(double[] col) // метод печати 1д массива
 //// метод выводит среднее арифм ПО СТОЛБЦАМ
 double[] ArithmeticMean(int[,] matrix) // метод получает 2д массив и выводит 1д массив где прописана 
 // сумма каждой строки, поделённая на колличество символов, то есть среднне арифметическое
-{
- double[] arrSize = new double[matrix.GetLength(0)];
-  for (int i = 0; i < matrix.GetLength(0); i++)
+{ 
+  double[] arrSize = new double[matrix.GetLength(1)]; // размер массива куда помещать список ср. арифм.
+  
+  for (int j = 0; j < matrix.GetLength(1); j++) // берём отсчет по столбцам
   {
     double sum = 0;
-    double helhArifmRound = 0;
-      for (int j = 0; j < matrix.GetLength(1); j++)
-      {
-      sum = sum + matrix[i,j]; //  суммируем элементы строки
-      }
-      helhArifmRound = sum / matrix.GetLength(1); //  сохраняем сумму элементов строки и находим среднее арифметическое
-      arrSize[i] = Math.Round(helhArifmRound, 1); //  округляем до десятых среднее арифметическое
+    double helhArifmRound = 0; // вводим переменную для временной записи ср. арифм.
+    for (int i = 0; i < matrix.GetLength(0); i++) // проходимся по значениям в столбце
+    {
+      sum = matrix[i,j] + sum; // находим общую сумму столбца
+      helhArifmRound = sum / matrix.GetLength(0); // находим среднее арифм
+      arrSize[j] = Math.Round(helhArifmRound, 1); // помещаем округляемое значение в массив со средними арифм.
+    } 
   }
-  return arrSize;
+  return arrSize; // возвращаем целиком массив со списком ср. арифметических
 }
 
 
